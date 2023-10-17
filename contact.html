@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact</title>
+<!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/animate.min.css">
+  <link rel="stylesheet" href="CSS/font.css">
+<!-- script -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/scrolla.jquery.min.js"></script>
+  <script src="js/splitting.min.js"></script>
+<!-- style -->
+<style>
+*{margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+a {color: inherit; text-decoration: none;}
+li {list-style: none;}
+address, em , i {font-style: none;}
+h1,h2,h3,h4,h5,h6 {font-size: inherit;}
+a:hover {text-decoration: none; color: inherit;}
+
+/* layout */
+.wrap {width: 100%; height: 100vh; color: #fff; font-family: 'pretendard', sans-serif; background: url(./img/main/gnbbg.png) no-repeat top left; font-size: 16px; font-weight: 300; overflow: hidden;}
+.en {font-family: 'Ivy Mode';}
+.en2 {font-family: 'Archivo', sans-serif;}
+.kr {font-family: 'cachildren modu';}
+.title {font-size: 32px; font-weight: 600;}
+.titleBox .titleArrow {display: inline-block; margin-right: 8px;}
+.titleBox h2 {display: inline-block;color: #fe7104;}
+
+
+/* header */
+header {position: fixed; width: 100%; padding: 0 40px; z-index: 100;}
+header.active {transform: translateY(-100%); transition: all 0.3s;}
+header .innerHeader {width: 80%; margin: 0 auto; margin-top: 83px; display: flex; justify-content: space-between; }
+header .innerHeader .logo {font-size: 20px;}
+header .innerHeader .logo .th {font-weight: 100;}
+header .innerHeader nav {font-weight: 300; line-height: 2; text-align: right; padding-right:50px ;}
+header .innerHeader nav .gnb a {display:block;}
+/* hover */
+header .innerHeader nav .gnb li a {position: relative;}
+header .innerHeader nav .gnb li a span:after {content: ''; background: url(./img/main/gnbhovericon.png) no-repeat center/cover; width: 20px; height: 20px; position: absolute; right: -28px; top: 20%; opacity: 0; }
+header .innerHeader nav .gnb li:nth-child(2) a {opacity: 0;}
+header .innerHeader nav .gnb li:nth-child(3) a {opacity: 0;}
+header .innerHeader nav .gnb li:nth-child(4) a {opacity: 0;}
+header .innerHeader nav .gnb li:nth-child(5) a {opacity: 0;}
+/* hover */
+header .innerHeader nav .gnb:hover li a {opacity: 1; transition: all 0.8s;}
+header .innerHeader nav .gnb li:hover a {color: #ffa903; transition: all 0.3s;}
+header .innerHeader nav .gnb li:hover a span::after {opacity: 1; transition: all 0.3s; animation: halfSpin 0.8s;}
+/* animation */
+@keyframes halfSpin {
+  0% {transform: rotate(90deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.inner {width: 70%; margin: 0 auto; padding-top: 260px; height: 100vh; position: relative;}
+.inner .top {font-size: 64px; margin-bottom: 64px; animation: fadeDwon 1s;}
+@keyframes fadeDwon {
+  0% {opacity: 0; transform: translateY(-100%);}
+}
+
+.inner .infoBox {display: flex; justify-content: space-between; animation: fadeDwon 1.4s;}
+.inner .infoBox .subTitle {font-size: 16px; font-weight: 500;  color: #ffa903; margin-bottom: 40px;}
+.inner .infoBox .subTitle span {display: inline-block; margin: 6px 30px 0; font-size: 20px; font-weight: 500; background: linear-gradient(90deg, rgba(255,169,3,1) 0%, rgba(254,113,4,1) 50%, rgba(255,255,255,1) 90%); background-clip: text; -webkit-background-clip: text; color: transparent; padding-bottom: 8px; transition: all 0.3s; opacity: 0;}
+.inner .infoBox .left {width: 50%;}
+.inner .infoBox .left .mail {display: inline-block; font-size: 32px; font-weight: 500; background: linear-gradient(90deg, rgba(255,169,3,1) 0%, rgba(254,113,4,1) 50%, rgba(255,255,255,1) 90%); background-clip: text; -webkit-background-clip: text; color: transparent; padding-bottom: 8px; transition: all 0.3s;}
+.inner .infoBox .right {width: 10%;}
+.inner .infoBox .right ul li {font-size: 20px; font-weight: 300; margin-bottom: 40px; position: relative;}
+.inner .infoBox .right ul li:nth-child(1):after {content: ''; background: url(./img/main/instarQR.png)no-repeat center/cover; position: absolute; right: -120%; top: -70%; width: 180px;height: 180px; opacity: 0;}
+.inner .infoBox .right ul li:nth-child(2):after {content: ''; background: url(./img/main/kakaoQR.png)no-repeat center/cover; position: absolute; right: -120%; top: -70%; width: 180px;height: 180px; opacity: 0;}
+
+/* hover */
+.inner .infoBox .subTitle:nth-child(1):hover span {opacity: 1;}
+.inner .infoBox .mail:hover, footer .inner .infoBox .mail:focus {border-bottom: 1px solid #ffa903;}
+.inner .infoBox .right ul li:hover a {color: #ffa903; transition: all 0.3s;}
+.inner .infoBox .right ul li:nth-child(1):hover:after {opacity: 1; transition: all 0.3s;}
+.inner .infoBox .right ul li:nth-child(2):hover:after {opacity: 1; transition: all 0.3s;}
+
+/* 1200px-850px */
+@media screen and (max-width:1200px) {
+  .inner {width: 63%; padding-top: 220px;}
+  .inner .infoBox .right {width: 13%;}
+  .inner .infoBox .right ul li:nth-child(1):after {right: -148px; width: 140px; height: 140px;}
+  .inner .infoBox .right ul li:nth-child(2):after {right: -148px; width: 140px; height: 140px;}
+}
+/* 850px-680px */
+@media screen and (max-width:850px) {
+  .inner {width: 46%;}
+  .inner .top {font-size: 8vw;}
+  .inner .infoBox {display: block;}
+  .inner .infoBox .left {width: 100%; margin-bottom: 60px;}
+  .inner .infoBox .right {width: 100%;}
+  .inner .infoBox .subTitle {margin-bottom: 26px;}
+  .inner .infoBox .right ul li {margin-bottom: 32px;}
+  .inner .infoBox .right ul li:nth-child(1):after {right: 40%;}
+  .inner .infoBox .right ul li:nth-child(2):after {right: 40%;}
+}
+
+/* 680px-500px */
+@media screen and (max-width:680px) {
+  .inner {width: 67%;}
+}
+
+/* 500px-380px */
+@media screen and (max-width:500px) {
+  header .innerHeader {width: 90%; margin-top: 44px;}
+  header .innerHeader .logo {font-size: 5vw; margin-top: 5px;}
+  header .innerHeader nav {font-size: 14px;}
+  .inner .top {margin-bottom: 50px;}
+  .inner .infoBox .left .mail {font-size: 21px;}
+  .inner .infoBox .right ul li {font-size: 16px; }
+  .inner .infoBox .right ul li:nth-child(1):after {right: 0;}
+  .inner .infoBox .right ul li:nth-child(2):after {right: 0;}
+
+}
+
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="innerHeader en2">
+        <a href="./index.html" class="logo">
+          <p>YEONGLIM,<span class="th">Portfolio</span></p>
+        </a>
+        <nav>
+          <ul class="gnb">
+            <li><a href="./index.html">Home<span></span></a></li>
+            <li><a href="./aboutme.html">About me<span></span></a></li>
+            <li><a href="./work.html">Work & Gallery<span></span></a></li>
+            <li><a href="./process.html">Process<span></span></a></li>
+            <li><a href="./contact.html">contact<span></span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="inner en2">
+      <h1 class="top en animate" data-animate="motion" data-splitting>Contact me</h1>
+      <div class="infoBox">
+        <div class="left">
+          <p class="subTitle">My e-mail <span>dudwls3887@gmail.com</span></p>
+          <p class="subTitle">Phone</p>
+          <p class="mail">+82 10-9358-2876</p>
+        </div>
+        <div class="right">
+          <p class="subTitle">follow me</p>
+          <ul>
+            <li><a href="https://instagram.com/_oeoqlee?igshid=YTQwZjQ0NmI0OA==">Instargram</a></li>
+            <li><a href="#">KakaoTalk</a></li>
+            <li><a href="https://soapy-pudding-fd3.notion.site/Study-note-7283275694b5492bb3bf325eea7d5f6c?pvs=4">Notion</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
