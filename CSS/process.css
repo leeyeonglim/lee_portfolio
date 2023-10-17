@@ -1,0 +1,404 @@
+@charset "uft-8";
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@500&family=Noto+Serif:wght@300;400;500;700&display=swap');
+
+/*reset*/
+*{margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+a {color: inherit; text-decoration: none;}
+li {list-style: none;}
+address, em , i {font-style: none;}
+h1,h2,h3,h4,h5,h6 {font-size: inherit;}
+a:hover {text-decoration: none; color: inherit;}
+
+/* layout */
+.wrap {width: 100%; color: #fff; font-family: 'pretendard', sans-serif; background: #222; font-size: 16px; font-weight: 300; overflow: hidden;}
+.en {font-family: 'Ivy Mode';}
+.en2 {font-family: 'Archivo', sans-serif;}
+.kr {font-family: 'cachildren modu';}
+.title {font-size: 50px; font-weight: 600; color: #ffa903;}
+
+/* header */
+header {position: fixed; width: 100%; padding: 0 40px; z-index: 100;}
+header.active {transform: translateY(-100%); transition: all 0.3s;}
+header .innerHeader {width: 80%; margin: 0 auto; margin-top: 83px; display: flex; justify-content: space-between; }
+header .innerHeader .logo {font-size: 20px;}
+header .innerHeader .logo .th {font-weight: 100;}
+header .innerHeader nav {font-weight: 300; line-height: 2; text-align: right; padding-right:50px ;}
+header .innerHeader nav .gnb a {display:block;}
+/* hover */
+header .innerHeader nav .gnb li a {position: relative;}
+header .innerHeader nav .gnb li a span:after {content: ''; background: url(../img/main/gnbhovericon.png) no-repeat center/cover; width: 20px; height: 20px; position: absolute; right: -28px; top: 20%; opacity: 0; }
+/* hover */
+header .innerHeader nav .gnb li:hover a {color: #ffa903; transition: all 0.3s;}
+header .innerHeader nav .gnb li:hover a span::after {opacity: 1; transition: all 0.3s; animation: halfSpin 0.8s;}
+/* animation */
+@keyframes halfSpin {
+  0% {transform: rotate(90deg);}
+  100% {transform: rotate(0deg);}
+}
+/* section01 intro bg */
+.intro {width: 100%; position: relative; }
+.intro .bgBox {width: 100%; z-index: 1;}
+.intro .bgBox .bg01 {position: absolute; left: 0; top: 0; animation: bg 1s; transition: all .8s;}
+.intro .bgBox .bg02 {position: absolute; left: 0; top: 0; animation: bg2 1s; transition: all .8s;}
+.intro .bgBox .bg03 {position: absolute; right: 0; top: 0; animation: bg3 1s; transition: all .8s;}
+
+
+@keyframes bg {
+  0% {transform: translateX(-200%);}
+}
+@keyframes bg2 {
+  0% {transform: translateX(-100%);}
+}
+@keyframes bg3 {
+  0% {transform: translateY(-100%) translateX(50%);}
+}
+
+/* visual */
+.visual {width: 100%; height: 100vh; z-index: 10; position: relative;}
+.visual .inner {width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;}
+.visual .inner .textBox {display: block; justify-content: center; align-items: center;  text-align: center;}
+.visual .inner .textBox .title {font-size: 128px; font-weight: 500; letter-spacing: -1; position: relative; color: #fff; transition: all .3s;}
+.visual .inner .textBox .subTitle {letter-spacing: 12px; color: #fe7104; margin-bottom: 40px; font-weight: 400;}
+.visual .inner .textBox .title::after {content: ''; position: absolute; left: -10%; top: -10%; background: #fe7104; border-radius: 50%; width: 72px; height: 72px;}
+/* animation */
+.visual .inner .textBox .title .char {display: inline-block; animation: titleAni .3s cubic-bezier(.10, 0, .10, 0) both; animation-delay: calc(60ms * var(--char-index)); }
+
+@keyframes titleAni {
+  0% {transform: translateY(100px);}
+}
+
+
+
+/* visual02 */
+.visual02 {width: 100%; height: 100vh; z-index: 2; position: relative; }
+.visual02 .inner {width: 80%; height: 100vh; margin: 0 auto; text-align: center; padding: 180px 0;}
+.visual02 .inner .title {color: #000; margin-bottom: 100px; font-size: 40px;}
+.visual02 .inner .info {width: 50%; display: flex; justify-content: space-between; margin: 0 auto;}
+.visual02 .inner .info .titleBox {display: flex; justify-content: center; align-items: center; margin-bottom: 40px;}
+.visual02 .inner .info .titleBox .imgBox {margin-right: 10px;}
+.visual02 .inner .info .titleBox .subTitle {font-size: 32px; color: #fff; font-weight: 600; }
+.visual02 .inner .info ul {width: 100%;}
+.visual02 .inner .info ul li {font-size: 24px; font-weight: 300; margin-bottom: 26px; color: #000;}
+
+/* animation */
+.visual02 .inner .info .left.motion {animation: Up .6s;}
+.visual02 .inner .info .right.motion {animation: Up .6s;}
+
+
+
+/* visual03 */
+.visual03 {width: 100%; height: 100vh; z-index: 2; position: relative;}
+.visual03 .inner {width: 60%;padding: 100px 0;  margin: 0 auto; text-align: center;}
+.visual03 .inner .titleBox {width: 70%;  margin:0 auto 160px;}
+.visual03 .inner .title {margin-bottom: 40px; color: #fff;}
+.visual03 .inner .txt {font-size: 20px; font-weight: 300; line-height: 1.4;}
+.visual03 .inner .infoBox {margin: 60px 0;}
+.visual03 .inner .infoBox .subTitle {font-size: 40px; font-weight: 500; color: #fff;}
+.visual03 .inner .infoBox .subTitle p::before {content: url(../img/PROCESS/free-icon-double-db3120\ 2.png);left: -10%;top: 0;}
+.visual03 .inner .infoBox .subTitle p::after {content: url(../img/PROCESS/free-icon-double-db3120\ 1.png);right: -10%;top: 0;}
+.visual03 .inner .circleBox {margin: 160px 0;}
+.visual03 .inner .circleBox ul {width: 65%; margin:0 auto; display: flex; justify-content: space-between;}
+.visual03 .inner .circleBox .line {width: 60%; margin: 40px auto; position: relative;}
+.visual03 .inner .circleBox .line span {display: block; width: 100%; height: 1px; border-top-style: dashed; color: #184e6b;}
+.visual03 .inner .circleBox .line ul li {width: 12px; height: 12px; border-radius: 50%; background: #184e6b; position: absolute;}
+.visual03 .inner .circleBox .line ul li.a {left: 0; top: -5px;}
+.visual03 .inner .circleBox .line ul li.b {left: 50%; transform: translate(-50%); top: -5px;}
+.visual03 .inner .circleBox .line ul li.c {right: 0; top: -5px;}
+.visual03 .inner .circleBox .line ul li::before {content: ''; width: 100%; height: 100%; border-radius: 50%; background: rgba(24,78,107,.4); position: absolute; left: 50%; top: 50%; margin-top: -6px; margin-left: -6px; animation: dot 1.5s infinite;}
+
+
+/* animation */
+.visual03 .inner .infoBox.motion .subTitle .char {display: inline-block; animation: titleAni .3s cubic-bezier(.10, 0, .10, 0) both; animation-delay: calc(60ms * var(--char-index)); }
+
+@keyframes dot {
+  100% {opacity: 1; transform: scale(3.5); opacity: 0;}
+}
+
+
+
+
+/* user */
+.user {width: 100%; height: 100vh; background: url(../img/main/overview\ bg.png) no-repeat center right;}
+.user .inner {width: 76%; margin: 0 auto; padding: 80px 0;}
+.user .inner .title { text-align: center;}
+.user .inner > ul {display: flex; justify-content: space-between;align-items: center; margin-top: 80px;}
+.user .inner > ul > li {width: 40%;}
+.user .inner > ul > li .subTitle {font-size: 28px; line-height: 3; color: #ccc; position: relative;}
+.user .inner > ul > li .subTitle::after {content: '1.'; position: absolute; left: 0; top: 0; color: #DB3120; font-size: 20px; font-weight: 300;}
+.user .inner > ul > li .subTitle:nth-child(2)::after {content: '2.';}
+.user .inner > ul > li .subTitle:nth-child(3)::after {content: '3.';}
+.user .inner > ul > li .subTitle span.po {border-bottom: 4px solid #184e6b; position: relative; font-size: 40px; font-weight: bold; color: #fff;}
+.user .inner > ul > li.right .colorBox li {width: 70%; margin-bottom: 40px;  background: #ffa903; padding:40px; border-radius: 100px;}
+.user .inner > ul > li.right .colorBox li .textBox {font-size: 24px; color: #000; font-weight: 400; text-align: center;}
+.user .inner > ul > li.right .colorBox li .textBox .en2 {margin-right: 30px; margin-bottom: 32px; color: #fff; text-align: left;}
+.user .inner > ul > li.right .colorBox li .textBox .en2 .line {position: relative;}
+.user .inner > ul > li.right .colorBox li .textBox .en2 .line::before {content: ''; width: 18vw; height: 1px; background: #fff; position: absolute; bottom: 0;left: 0;}
+.user .inner > ul > li.right .colorBox li:nth-child(2n-1) {margin-left: 140px;}
+
+/* animation */
+.user.motion .inner > ul > li.right .colorBox li:nth-child(1) {background: #FF9900; animation: rightUp .4s; transition: all .6s;}
+.user.motion .inner > ul > li.right .colorBox li:nth-child(2) {background: #FFD688; animation: rightUp .6s; transition: all .6s;}
+.user.motion .inner > ul > li.right .colorBox li:nth-child(3) {animation: rightUp .8s; transition: all .6s;}
+.user.motion .inner > ul > li.left {animation: leftUp .8s; transition: all .6s;}
+
+
+@keyframes leftUp {
+  0% {transform: translateX(-100%);}
+}
+
+@keyframes rightUp {
+    0% {transform: translateX(100%);}
+}
+
+
+/* section02 brain */
+.brain {width: 100%; position: relative;}
+.brain .inner {width: 80%; margin: 0 auto;}
+.brain .inner .titleBox .title {color: #184e6b; opacity: 0; }
+.brain .inner .titleBox .title h1 {font-size: 200px; -webkit-text-stroke: 1px #ffa903; color: transparent; text-align: center; line-height: .8;}
+.brain .inner .titleBox .title h2 {display: inline-block; font-size: 32px; font-weight: 100; letter-spacing: 14px;}
+.brain .inner ul {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; }
+.brain .inner ul li {width: 36%; padding: 30px; }
+.brain .inner ul li:nth-child(2n) {margin-top: 200px;}
+.brain .inner ul li .imgBox {width: 100%; margin-bottom: 16px; position: relative;}
+.brain .inner ul li .imgBox img {width: 100%;}
+.brain .inner ul li .txt {color: #ccc;}
+.brain .inner ul li .txt b {color: #fff;}
+.brain .inner ul li .txt span {color: #db3120; font-weight: 900; margin-right: 4px;}
+
+
+
+
+/* section03 kewords */
+.keywords {width: 100%; height: 100vh; text-align: center; }
+.keywords .inner {width: 80%; height: 100vh; margin: 0 auto; display: flex; justify-content: center; align-items: center;}
+.keywords .inner .textBox {position: relative;}
+.keywords .inner .textBox .title {position:absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #ffa903; z-index: 2;}
+.keywords .inner .textBox .txt {font-size: 30px; text-align: justify; color: #496c80; font-weight: 400; line-height: 2; opacity: 30%;}
+.keyword .inner .textBox.motion .txt {animation: colorTrans .3s; transition: all .8s;}
+.keywords .inner .textBox .txt span {color: #fff; font-size: 36px;}
+
+
+/* hover */
+.keywords .inner .textBox:hover .txt {opacity: 100%; transition: all .8s;}
+
+/* animation */
+@keyframes colorTrans {
+    0% {opacity: 0;}
+    90% {opacity: 0;}
+}
+
+/* section progect goal */
+.goal {width: 100%; height: 100vh;}
+.goal .inner {width: 60%; margin: 0 auto; text-align: center;}
+.goal .inner .title {margin: 40px 0 100px;}
+.goal .inner .topBox { position: relative; margin-bottom: 200px;}
+.goal .inner .topBox::before {content: url(../img/PROCESS/goal\ line1.png); position: absolute; transform: translateX(-50%); left: 5%; top: -50%;}
+.goal .inner .topBox::after {content: url(../img/PROCESS/goal\ line2.png); position: absolute; transform: translateX(-50%); right: -30%; bottom: -50%;}
+
+.goal .inner .topBox ul {display: flex; justify-content: space-between; position: relative;}
+.goal .inner .topBox ul:after {position: absolute; content: ''; width: 90%;height: .5px; background: #fe7104; transform: translate(-50%,-50%); left: 50%; top: 50%;}
+.goal .inner .topBox ul li {width: 28%;}
+.goal .inner .topBox ul li .txt {font-size: 1.2rem; margin-bottom: 120px; line-height: 1.6;}
+.goal .inner .topBox ul li .subTitle {display: inline-block; font-size: 1.6rem; font-weight: 500; color: #ffa903; position: relative;}
+.goal .inner .topBox ul li:nth-child(1) .subTitle::after {content: '1.'; font-size: 1.2rem; color: #DB3120; position: absolute; left: -26%;top: -30%; }
+.goal .inner .topBox ul li:nth-child(2) .subTitle::after {content: '2.'; font-size: 1.2rem; color: #DB3120; position: absolute; left: -26%;top: -30%; }
+.goal .inner .topBox ul li:nth-child(3) .subTitle::after {content: '3.'; font-size: 1.2rem; color: #DB3120; position: absolute; left: -26%;top: -30%; }
+.goal .inner .bottomBox {position: relative;}
+.goal .inner .bottomBox h3 {font-weight: 400; font-size: 32px; background: #0E3143; padding: 36px; border-radius: 100px;}
+.goal .inner .bottomBox::after {content: ''; position: absolute; width: 1px; height: 40px; background: #fff; left: 50%;top: -60%; transform: translateX(-50%);}
+
+/* animation */
+.goal .inner .topBox.motion ul li {animation: Up .8s;}
+.goal .inner .bottomBox.motion h3 {animation: Up .8s;}
+@keyframes Up {
+  0% {transform: translateY(80%);}
+}
+
+
+
+/* section04 concept */
+.concept {width: 100%; height: 100vh; background: #ffa903 url(../img/PROCESS/bgconcept.png) no-repeat bottom; background-size: cover;}
+.concept .inner {width: 80%; margin: 0 auto; padding: 100px 0;}
+.concept .inner .topBox { margin-bottom: 48px;}
+.concept .inner .topBox .title {display: inline-block; margin-right: 20px;}
+.concept .inner .topBox  .txt {display: inline-block;}
+.concept .inner .bottomBox {display: flex; flex-direction: column;}
+.concept .inner .bottomBox .imgBox {width: 80%; margin: 0 auto; }
+.concept .inner .bottomBox .imgBox img {width: 100%;}
+
+/* animation */
+.concept .inner .bottomBox .imgBox.motion {animation: conceptBg 1s; transition: all .8s;}
+@keyframes conceptBg {
+  0% {opacity: 0; transform: translateY(80%);}
+}
+
+/* section05 research */
+.research {width: 100%; background: #ffa903; color: #000;}
+.research .inner {width: 80%; margin: 0 auto; padding-top: 200px;}
+.research .inner .title {text-align: center; margin-bottom: 64px; color: #000;}
+.research .inner .infoBox {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.research .inner .infoBox li {width: 100%; display: flex; margin-bottom: 40px;}
+.research .inner .infoBox li:nth-child(2) {width: 100%; display: flex; text-align: right; flex-direction: row-reverse; }
+.research .inner .infoBox li .left {width: 48%;}
+.research .inner .infoBox li .left .num {font-size: 40px; font-weight: 600; color: #fff;}
+.research .inner .infoBox li .left .imgBox {display: block; width: 100%; position: relative;}
+.research .inner .infoBox li .left .imgBox img {width: 100%; }
+.research .inner .infoBox li .left .imgBox::after {content: 'go site'; position: absolute; right: 10%; bottom: 10%; background:#fff url(../img/main/workArrow.png) no-repeat center 56%; width: 50px; height: 50px; padding: 50px; border-radius: 100px; opacity: 0; text-align: center;}
+.research .inner .infoBox li .right {width: 50%; margin-top: 48px; margin-left: 20px;}
+.research .inner .infoBox li:nth-child(2) .right {margin-right: 20px; }
+.research .inner .infoBox li .right .subText {font-size: 20px; margin-bottom: 16px; color: #184e6b; font-weight: 600;}
+.research .inner .infoBox li .right .txt {font-weight: 400; line-height: 1.6;}
+
+/* hover */
+.research .inner .infoBox li .left .imgBox:hover::after, .research .inner .infoBox li .left .imgBox.imgBox:focus::after {opacity: 1; animation: halfSpin .8s;}
+
+/* animation */
+.research .inner .infoBox li .left .imgBox.motion::before {content: ''; position: absolute; left: 0;top: 0; width: 100%; height: 0; background: #ffa903; animation: mask 1s;}
+
+@keyframes mask {
+  0% {height: 90%;}
+}
+
+
+/* section06 ia */ 
+.ia {width: 100%; height: 100vh; color: #000;}
+.ia .inner {width: 80%; height: 100vh; margin: 0 auto; padding: 200px 0; }
+.ia .inner .title {margin-bottom: 100px; color: #000;}
+.ia .inner .title span {font-family: 'Pretendard'; font-size: 24px; font-weight: 300;}
+.ia .inner .info {width: 86%; margin: 0 auto;}
+
+.ia .inner .titleBox {display: flex; justify-content: center; position: relative; margin-bottom: 72px;}
+.ia .inner .titleBox .subTitle {font-size: 40px;  font-weight: 600;}
+.ia .inner .titleBox .deco02 {padding-right: 10px;}
+.ia .inner .titleBox .deco01 {position: absolute; right: 40%; top: -80%;}
+.ia .inner ul {width: 100%; display: flex; justify-content: space-between; text-align: center;}
+.ia .inner ul li {width: 20%;}
+.ia .inner ul li .subBox { background: #fe7104; color: #000; border-radius: 10px; padding: 16px 20px; margin-bottom: 45px; position: relative;}
+.ia .inner ul li .subBox .line {position: absolute; width: 1px; height: 60px; background: #fe7104; left: 50%;}
+.ia .inner ul li .subBox .line::before {content: ''; width: 8px; height: 8px; background: #fe7104; position: absolute; left: 50%; bottom: -10%; border-radius: 50px; transform: translateX(-50%);}
+.ia .inner ul li .subBox .subTxt {font-size: 24px; font-weight: 300;}
+.ia .inner ul li .textBox {height: 450px; display: block; border: 1px solid #184e6b; border-radius: 10px; padding: 40px 0;}
+.ia .inner ul li .textBox li {width: 100%; line-height: 1.6; }
+
+/* animation */
+.ia.motion .inner .titleBox {animation: titleAni .6s; transition: all .6s;}
+.ia .inner ul.motion li:nth-child(1) {animation: Up .4s;}
+.ia .inner ul.motion li:nth-child(2) {animation: Up .6s;}
+.ia .inner ul.motion li:nth-child(3) {animation: Up .8s;}
+.ia .inner ul.motion li:nth-child(4) {animation: Up 1s;}
+
+@keyframes titleAni {
+  0% {opacity: 0; transform: translateY(-100%);}
+}
+
+
+/* section07 systerm */
+.systerm {width: 100%; height: 100vh; background: url(../img/PROCESS/bgdesignsysterm.png) no-repeat center/cover;}
+.systerm .inner {width: 80%; margin: 0 auto; display: flex; justify-content: space-between; align-items: end; padding: 100px 0;}
+.systerm .inner .left {width: 40%;}
+.systerm .inner .left .imgBox {width: 100%;}
+.systerm .inner .left .imgBox img {width: 100%;}
+.systerm .inner .right {width: 34%; display: flex; }
+.systerm .inner .right .textBox .title {margin-bottom: 32px;}
+.systerm .inner .right .textBox .txt {font-weight: 300; line-height: 1.6; margin-bottom: 140px;}
+
+/* animate */
+.systerm .inner .left.motion .imgBox {animation: sani2 3s infinite ease-in-out alternate; transition: all .6s;}
+.systerm.motion .inner .left {animation: sani 1.2s;}
+.systerm .inner .right.motion {animation: Up .8s;}
+
+@keyframes sani {
+    0% {opacity: 0; transform: translateX(50%);}
+    100% {opacity: 1; transform: translateX(0%);}
+}
+@keyframes sani2 {
+    0% {transform: translateY(10%);}
+
+}
+
+/* section07-1 systerm2 */
+.systerm2 {width: 100%; height: 100vh;}
+.systerm2 .inner {width: 80%; margin: 0 auto; display: flex; justify-content: space-between; padding: 100px 0;}
+.systerm2 .inner .left {width: 45%;}
+.systerm2 .inner .left .subTitle {font-size: 20px; font-weight: 600; color: #000; margin-bottom: 48px;}
+.systerm2 .inner .left .imgBox {display: flex; justify-content: space-between;}
+.systerm2 .inner .left .meImg {width: 100%; margin-top: 120px;} 
+.systerm2 .inner .left .meImg img {width: 100%;} 
+.systerm2 .inner .right {width: 45%; margin-top: 80px;}
+.systerm2 .inner .right .imgBox {width: 100%;} 
+.systerm2 .inner .right .imgBox img {width: 100%;}
+
+/* section08 idea */
+.idea {width: 100%; height: 100vh; color: #000;}
+.idea .inner {width: 80%; margin: 0 auto; display: flex; justify-content: space-between; padding: 100px 0; }
+.idea .inner .left {width: 45%;}
+.idea .inner .left .imgBox {width: 80%;}
+.idea .inner .imgBox .img {border-radius: 10px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);}
+.idea .inner .left .imgBox img {width: 100%; margin-bottom: 16px;}
+.idea .inner .left .imgBox .subTxt {margin-top: 40px;}
+.idea .inner .subTxt {font-size: 20px; color: #184e6b;  text-align: center; }
+.idea .inner .right {width: 45%;}
+.idea .inner .right .imgBox {width: 90%;}
+.idea .inner .right .imgBox img {width: 100%;}
+.idea .inner .right .imgBox .subTxt {margin-top: 16px;}
+.idea .inner .right .titleBox {margin-top: 40px;}
+.idea .inner .right .titleBox .title {margin-bottom: 16px;}
+
+/* section.09 flowchart */
+.flowchart {width: 100%; color: #184e6b;}
+.flowchart .inner {width: 80%; margin: 0 auto; padding: 100px 0;}
+.flowchart .inner .title {margin-bottom: 100px;}
+.flowchart .inner .titleBox {display: flex; justify-content: center; position: relative; margin-bottom: 72px;}
+.flowchart .inner .titleBox .subTitle {font-size: 40px;  font-weight: 600;}
+.flowchart .inner .titleBox .deco02 {padding-right: 10px;}
+.flowchart .inner .titleBox .deco01 {position: absolute; right: 40%; top: -80%;}
+.flowchart .inner .imgBox {width: 80%; margin: 0 auto;}
+.flowchart .inner .imgBox img {width: 100%;}
+
+/* section10 wireframe */
+.wireframe {width: 100%;}
+.wireframe .inner {width: 80%; margin: 0 auto; padding: 100px 0;}
+.wireframe .inner .title {text-align: center; margin-bottom: 100px;}
+.wireframe .inner .imgBox {display: flex; justify-content: space-between;}
+.wireframe .inner .imgBox li {width: 18%;}
+.wireframe .inner .imgBox li img {width: 100%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border-radius: 10px;}
+
+/* section11 prototype */
+.prototype {width: 100%; height: 100vh; padding-bottom: 100px;}
+.prototype .inner {width: 80%; margin: 0 auto; padding: 80px 0;}
+.prototype .inner .title {text-align: center; margin-bottom: 40px;}
+.prototype .inner .videoBox {width: 100%; display: flex; justify-content: center; align-items: center;}
+.prototype .inner .videoBox video {object-fit: cover;}
+
+/* footer */
+footer {width: 100%; height: 70vh; background: #DB3120; position: relative; color: #fff;}
+footer .phone {position: absolute; bottom: 20%; font-size: 32px; font-weight: 300;}
+footer .inner {width: 80%; margin: 0 auto; padding-top: 100px; }
+footer .inner .top {font-size: 64px; margin-bottom: 40px;}
+footer .inner .infoBox {display: flex; justify-content: space-between;}
+footer .inner .infoBox .subTitle {font-size: 16px; font-weight: 500;  color: #ffa903; margin-bottom: 20px;}
+footer .inner .infoBox .subTitle span {display: inline-block; margin: 6px 30px 0; font-size: 20px; font-weight: 500; background: linear-gradient(90deg, rgba(255,169,3,1) 0%, rgba(254,113,4,1) 50%, rgba(255,255,255,1) 90%); background-clip: text; -webkit-background-clip: text; color: transparent; padding-bottom: 8px; transition: all 0.3s; opacity: 0;}
+footer .inner .infoBox .left {width: 50%;}
+footer .inner .infoBox .left .mail {display: inline-block; font-size: 32px; font-weight: 500; background: linear-gradient(90deg, rgba(255,169,3,1) 0%, rgba(254,113,4,1) 50%, rgba(255,255,255,1) 90%); background-clip: text; -webkit-background-clip: text; color: transparent; padding-bottom: 8px; transition: all 0.3s; margin-bottom: 50px;}
+footer .inner .infoBox .right {width: 10%;}
+footer .inner .infoBox .right ul li {font-size: 20px; font-weight: 300; margin-bottom: 40px; position: relative;}
+footer .inner .infoBox .right ul li:nth-child(1):after {content: ''; background: url(../img/main/instarQR.png)no-repeat center/cover; position: absolute; right: -90%; top: -70%; width: 180px; height: 180px; opacity: 0; z-index: 50;}
+footer .inner .infoBox .right ul li:nth-child(2):after {content: ''; background: url(../img/main/kakaoQR.png)no-repeat center/cover; position: absolute; right: -90%; top: -70%; width: 180px;height: 180px; opacity: 0;z-index: 50;}
+
+
+/* hover */
+footer .inner .infoBox .subTitle:nth-child(1):hover span {opacity: 1;}
+footer .inner .infoBox .mail:hover, footer .inner .infoBox .mail:focus {border-bottom: 1px solid #ffa903;}
+footer .inner .infoBox .right ul li:hover a {color: #ffa903; transition: all 0.3s;}
+footer .inner .infoBox .right ul li:nth-child(1):hover:after {opacity: 1; transition: all 0.3s;}
+footer .inner .infoBox .right ul li:nth-child(2):hover:after {opacity: 1; transition: all 0.3s;}
+  /* gotop */
+  .topbtn { position: fixed; right: 10%; bottom: 14%; z-index: 6; color: #fe7104;}
+.goTop {position: fixed; padding: 20px; display: block; text-align: center;}
+.goTop p {margin-top: 4px; opacity: 0; transition: all 0.3s;}
+/* hover */
+.topbtn:hover .goTop p {opacity: 1;}

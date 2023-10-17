@@ -1,0 +1,510 @@
+@charset "uft-8";
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@500&family=Noto+Serif:wght@300;400;500;700&display=swap');
+
+
+
+/*reset*/
+*{margin: 0; padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+a {color: inherit; text-decoration: none;}
+li {list-style: none;}
+address, em , i {font-style: none;}
+h1,h2,h3,h4,h5,h6 {font-size: inherit;}
+a:hover {text-decoration: none; color: inherit;}
+
+
+
+/* layout */
+.wrap {width: 100%; color: #fff; font-family: 'pretendard', sans-serif; background: #c62810; font-size: 16px; font-weight: 300; overflow: hidden;}
+.en {font-family: 'Ivy Mode';}
+.en2 {font-family: 'Archivo', sans-serif;}
+.kr {font-family: 'cachildren modu';}
+.title {font-size: 32px; font-weight: 600;}
+/* .title.motion {transform: translate3d(0,0,0) skewY(0deg); overflow: hidden;} */
+.titleBox {display: block;}
+.titleBox .titleArrow {display: inline-block; margin-right: 8px;}
+.titleBox h2 {display: inline-block;color: #fe7104;}
+
+
+/* btnMore */
+.btnMore {display: block; width: 140px; margin: 0 auto; background:linear-gradient(90deg, rgba(255,169,3,.5) 10%, rgba(254,113,3,1) 66%, rgba(219,49,32,1) 100%); border-radius: 100px; padding: 10px 40px; position: relative;}
+.btnMore .txt1 {display: flex; justify-content: center; align-items: center; }
+.btnMore .txt1 p {display: inline-block; }
+.btnMore .btnArrow {display: inline-block; margin-right: 10px;}
+.btnMore .btnArrow img {display: block;}
+
+/* header */
+header {position: fixed; width: 100%; padding: 0 40px; z-index: 100;}
+header.active {transform: translateY(-100%); transition: all 0.3s;}
+header .innerHeader {width: 80%; margin: 0 auto; margin-top: 83px; display: flex; justify-content: space-between; }
+header .innerHeader .logo {font-size: 20px;}
+header .innerHeader .logo .th {font-weight: 100;}
+header .innerHeader nav {font-weight: 300; line-height: 2; text-align: right; padding-right:50px ;}
+header .innerHeader nav .gnb a {display:block;}
+/* hover */
+header .innerHeader nav .gnb li a {position: relative;}
+header .innerHeader nav .gnb li a span:after {content: ''; background: url(../img/main/gnbhovericon.png) no-repeat center/cover; width: 20px; height: 20px; position: absolute; right: -28px; top: 20%; opacity: 0; }
+
+/* hover */
+header .innerHeader nav .gnb li:hover a {color: #ffa903; transition: all 0.3s;}
+header .innerHeader nav .gnb li:hover a span::after {opacity: 1; transition: all 0.3s; animation: halfSpin 0.8s;}
+/* animation */
+@keyframes halfSpin {
+  0% {transform: rotate(90deg);}
+  100% {transform: rotate(0deg);}
+}
+
+/* section01 visual */
+.visual {width: 100%; height: 100vh; margin: 0 auto; background: url(../img/main/index\ mainbg.png) no-repeat center/cover; position: relative; animation: bgAni .8s;}
+.visual .objectMe {position: absolute; right: 10%;bottom: 0%; z-index: 1; width: 610px; animation: rightUp .6s;}
+.visual .objectMe img {width: 100%;}
+.visual .objectBright {position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 164px; height: 381px;  animation: bright 1.2s; transition: all .8s;}
+.visual .objectBright2 {position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 164px; height: 381px; animation: down 1.2s;}
+.visual .objectBright img {width: 100%;}
+.visual .objectBright2 img {width: 100%;}
+.visual .title {font-size: 80px; font-weight: normal; left: 46.2%; top: 66%; transform: translate(-50%,-50%) rotate(19deg); position: absolute; animation: rightUp2 .8s;}
+.visual .scrolldown {position: absolute; bottom: 8%;left: 8%; animation: spin 8s linear infinite;}
+.visual .scrolldown .scroll {display: block;}
+@keyframes spin {
+  0% {transform: rotate(360deg);}
+}
+
+@keyframes bright {
+  0% {opacity: 0;}
+  90% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* bgBlack*/
+.bgBlack {width: 100vw; height: 100vh; margin: 0 auto; background: url(../img/main/index\ main-black.png) no-repeat center/cover; position: relative; z-index: 200;}
+.bgBlack .objectBright {position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
+.bgBlack .title {font-size: 80px; font-weight: normal; left: 46.2%; top: 66%; transform: translate(-50%,-50%) rotate(19deg); position: absolute; color: #222;}
+/* animation */
+@keyframes bgAni {
+  0% { transform: scale(1.3);}
+}
+
+@keyframes down {
+ 0% {transform: translateY(-100%) translateX(-50%);}
+ 100% {transform: translateY(0%) translateX(-50%); }
+}
+@keyframes rightUp {
+ 0% {transform: translateX(200%);}
+}
+@keyframes rightUp2 {
+ 0% {transform: translate(20px, 80%) rotate(19deg); opacity: 0; }
+ 60% {transform: translate(20px, 80%) rotate(19deg); opacity: 0; }
+ 90% {transform: translateX(20px, 80%);}
+}
+
+/*section02 about */
+.about {width: 100%; padding: 300px 0 200px;}
+.about .inner {width: 90%; margin: 0 auto; display: flex; justify-content: right;}
+.about .inner .left {width: 45%;}
+.about .inner .left .mainImg {width: 480px;  position: relative; transition: all 2s; }
+.about .inner .left .mainImg img {width: 100%;}
+.about .inner .left .mainImg.on {position: fixed; left: 14%; top: 6%;transition: all 0.6s; }
+.about .inner .left .mainImg .name {position: absolute; right: -20%; top: 30%; font-size: 64px; font-weight: bold; color: #fe7104;}
+.about .inner .left .mainImg .point {position: absolute; width: 32px; height: 32px;right: -28%; top: 30%;}
+.about .inner .left .mainImg .btnAbout {width: 136px; display: block; position: absolute; right: 10%; bottom: 10%; opacity: 0; transition: all .3s;}
+.about .inner .right {width: 45%;}
+.about .inner .right li {margin-bottom: 60px; margin-left: 80px;  }
+.about .inner .right li:nth-child(2n) { margin-left: 0;}
+.about .inner .right li .img {width: 480px;}
+.about .inner .right li .img img {width: 100%;}
+.about .inner .right .txtBox {display: flex; justify-content: center; text-align: center; margin: 0 auto;}
+.about .inner .right .txtBox .line {width: 32px; height: 32px; margin: 10px;}
+.about .inner .right .txtBox .line img {width: 100%;}
+.about .inner .right .txtBox .txt {font-size: 24px; margin-bottom: 56px;}
+
+/* img animation */
+.about .img.motion {position: relative; transition: all .3s; }
+.about .img.motion::after {content: ''; width: 100%; height: 0; background: #c62810; position: absolute; top: 0; left: 0; animation: mask 1.2s;}
+.about .inner .left .mainImg:hover .btnAbout {opacity: 1;}
+@keyframes mask {
+  0% {height: 90%;}
+}
+
+.about .inner .left .mainImg:hover .point {animation: spin 3s;}
+
+
+
+
+/* section03 aboutTxt */
+.aboutTxt {width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;  text-align: center;}
+.aboutTxt .inner {width: 60%;}
+.aboutTxt .inner .title {color: #fe7104; margin-bottom: 80px;}
+.aboutTxt .inner .subtitle {font-size: 32px; font-weight: 400; margin-bottom: 30px;}
+.aboutTxt .inner .subtitle span {color: #ffa903;}
+.aboutTxt .inner .txt {width: 96%; margin: 0 auto; font-size: 20px; font-weight: 300; line-height: 1.7; margin-bottom: 56px;}
+
+/* section04 slogun */
+.slogun { align-items: center; justify-content: center;}
+.slogun .inner {display: flex; flex-wrap: nowrap; position: relative;}
+.slogun .inner li {flex-shrink: 0!important; padding: 2%;}
+.slogun .inner h1 {font-size: 300px; font-weight: bold; -webkit-text-stroke: 1px #DB3120; background: linear-gradient(180deg, #DB3120 20%, rgba(254,113,4,0.9) 80%); background-clip: text; -webkit-background-clip: text; color: transparent;}
+
+/* section05 videoBox */
+.videoBox {width: 100%; height: 100vh;}
+.videoBox video {width: 100%;}
+
+/* section06 skill */
+.skill {width: 100%; height: 100vh; margin: 100px 0;}
+.skill .inner {width: 80%; margin: 0 auto; position: relative;}
+.skill .inner .line {position: absolute; left: 40%; top: 10%; display: flex;}
+.skill .inner .line .lineImg {width: 40px; margin-right: 24px; transform: rotate(18deg);}
+.skill .inner .line .lineImg img {width: 100%;}
+.skill .inner .line h3 {font-size: 20px; font-weight: 300;}
+.skill .inner .titleBox {margin-bottom: 100px;}
+.skill .inner .textBox {font-size: 96px; font-weight: 600; }
+.skill .inner .textBox .pht {position: relative;}
+.skill .inner .textBox .pht {width: 40%;}
+.skill .inner .subTxt {display:flex; justify-content: left;}
+.skill .inner .subTxt li {margin-right:56px;}
+.skill .inner .subTxt li {position: relative;}
+.skill .btnMore {margin: 100px auto;}
+/* hover */
+.skill .inner .textBox li:hover {color: #fe7104; transition: all 0.3s;} 
+.skill .inner .textBox li:hover span {color: #fff;}
+/* span */
+.skill .inner .textBox .pht .a::before {content: '01'; color: #DB3120; position: absolute; right:20%; top: 0; font-size: 24px; font-family: 'Archivo'; font-weight: 300; opacity: 0; transition: all 0.3s;}
+.skill .inner .textBox .pht .b::before {content: '98%'; color: #ffa903; position: absolute; right: -30%; top: -50%; font-size: 128px; opacity: 0; transition: all 0.3s;}
+.skill .inner .textBox .pht:hover .a:before {opacity: 1;} 
+.skill .inner .textBox .pht:hover .b:before {opacity: 1;} 
+
+/* .subTxt hover */
+/* span */
+.skill .inner .subTxt li .a::before {content: ''; color: #DB3120; position: absolute; right: 0; top: 0; font-size: 24px; font-family: 'Archivo'; font-weight: 300; opacity: 0; transition: all 0.3s;}
+.skill .inner .subTxt li .b::before {content: ''; color: #ffa903; position: absolute; right: -60%; top: -50%; font-size: 128px; opacity: 0; transition: all 0.3s;}
+.skill .inner .subTxt li:hover .a::before {opacity: 1;} 
+.skill .inner .subTxt li:hover .b::before {opacity: 1;} 
+.skill .inner .subTxt li:nth-child(1):hover {margin-right: 300px; transition: all .8s;}
+.skill .inner .subTxt li:nth-child(2):hover {transition: all .8s;}
+.skill .inner .subTxt:nth-child(2) li:nth-child(1):hover .a:before {content: '02';}
+.skill .inner .subTxt:nth-child(2) li:nth-child(1):hover .b:before {content: '96%'; right: -62%;}
+.skill .inner .subTxt:nth-child(2) li:nth-child(2):hover .a:before {content: '03';}
+.skill .inner .subTxt:nth-child(2) li:nth-child(2):hover .b:before {content: '95%'; right: -76%;}
+.skill .inner .subTxt:nth-child(3) li:nth-child(1):hover .a:before {content: '04';}
+.skill .inner .subTxt:nth-child(3) li:nth-child(1):hover .b:before {content: '91%'; right: -100%;}
+.skill .inner .subTxt:nth-child(3) li:nth-child(2):hover .a:before {content: '05';}
+.skill .inner .subTxt:nth-child(3) li:nth-child(2):hover .b:before {content: '86%'; right: -120%;}
+.skill .inner .subTxt:nth-child(4) li:nth-child(1):hover .a:before {content: '06';}
+.skill .inner .subTxt:nth-child(4) li:nth-child(1):hover .b:before {content: '73%'; right: -100%;}
+.skill .inner .subTxt:nth-child(4) li:nth-child(2):hover .a:before {content: '07';}
+.skill .inner .subTxt:nth-child(4) li:nth-child(2):hover .b:before {content: '68%'; right: -56%;}
+
+
+/* section07 work */
+.work {width: 100%; position: relative;}
+.work .inner {width: 72%; margin: 0 auto;}
+.work .inner .top {display: flex; justify-content: space-between;}
+.work .inner .top .subTxt {font-size: 24px; font-weight: 300; line-height: 2;}
+.work .inner .subTitle {width: 100%; height: 100vh; text-align: center; padding-top:30vh; box-sizing: border-box;}
+.work .inner .subTitle .workTitle1 {font-size: 240px; font-weight: bold; background: linear-gradient(180deg, #DB3120,  rgba(254,113,4,0.9) 80%); background-clip: text; -webkit-background-clip: text; color: transparent;}
+.work .inner .subTitle .workTitle2 {font-size: 240px; font-weight: bold; background: linear-gradient(180deg,rgba(255,169,3,1) 40%, rgba(254,113,4,0.9) 100%); background-clip: text; -webkit-background-clip: text; color: transparent; opacity: 0;}
+.work .workList {width: 100%; margin:100vh auto 0; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.work .workList li {width: 46%; margin-bottom: 96px;}
+.work .workList li:nth-child(2n) {margin-top: 10%;}
+.work .workList li a {display: block; filter: brightness(30%);}
+.work .workList li a .imgBox { position: relative;}
+.work .workList li a .imgBox img {width: 100%;}
+.work .workList li a .txtBox {margin-top: 20px;}
+.work .workList li a .txtBox h3 {font-size: 24px; font-weight: 400; margin-bottom: 4px;}
+.work .workList li a .txtBox .subTxt {font-size: 20px; font-weight: 100;margin-bottom: 4px;}
+.work .workList li a .txtBox p {font-size: 16px; font-weight: 100;}
+.work .btnMore {margin: 100px auto;}
+/* hover */
+.work .workList li a:hover {filter: brightness(100%); transition: all 0.8s;}
+.work .workList a .imgBox::before {content: ''; width: 168px; height: 168px; background: #fff url(../img/main/workArrow.png) no-repeat center/18px; border-radius: 50%; position: absolute; right: 12%; bottom: 16%; z-index: 1; opacity: 0;}
+.work .workList a:hover .imgBox:before {opacity: 1; transition: all 0.8s;}
+
+
+
+/* section08 ncs */
+.ncs {width: 100%; height: 100vh; position: relative; background: url(../img/main/ncsbgicon.png) no-repeat top right; background-size: 600px; margin: 200px 0;}
+.ncs .inner {width: 80%; margin: 0 auto; padding: 100px 0;}
+.ncs .inner .titleBox {margin-bottom: 88px;}
+.ncs .inner .subTitle {font-size: 200px; letter-spacing: -1px; color: #ffa903; font-weight: 400; font-style: italic; margin-bottom: -60px; animation: rightUp3 1.2s;}
+.ncs .inner .subTitle2 {font-size: 128px; color: #DB3120; font-weight: 600; font-style: italic; float: right; animation: rightUp3 .5s .5s ease-in-out both;}
+.ncs .inner ul {display: flex; justify-content: space-between; flex-wrap: nowrap; }
+.ncs .inner ul li {width: 40%; margin-right: 40px; flex-shrink: 0!important; filter: brightness(30%); transition: all 0.3s;}
+.ncs .inner ul li a {display: block;}
+.ncs .inner ul li a img {width: 100%; border-radius: 20px;}
+.ncs .btnMore {position: absolute; left: 50%; bottom: 10%;  transform: translateX(-50%);}
+
+/* hover */
+.ncs .inner ul li:hover {filter: brightness(100%);}
+/* animation */
+@keyframes leftUp {
+  0% {transform: translateX(-100%);}
+  90% {transform: translateX(-100%);}
+}
+@keyframes rightUp3 {
+  0% {opacity: 0; transform: translateX(-100%);}
+  90% {opacity: 1; transform: translateX(0);}
+}
+/* @keyframes rightUp3 {
+  0% {transform: translateX(200%);}
+  90% {transform: translateX(200%);}
+} */
+
+
+/* section09 mockUp */
+.mockUp {height: 100vh; overflow: hidden;}
+.mockUp .swiper-container {height: 100vh;}
+.mockUp .upBox {width: 150%; height: 100%; display: flex; justify-content: space-between; transform: rotate(35deg);}
+.mockUp .upBox .swiper-slide {width: 33%; }
+.mockUp .upBox .swiper-slide > ul > li {width: 100%; margin: 10px; filter: brightness(40%); }
+.mockUp .upBox .swiper-slide > ul > li img {width: 100%;}
+
+/* footer */
+footer {width: 100%; height: 70vh; background: #DB3120; position: relative;}
+footer .phone {position: absolute; bottom: 20%; font-size: 32px; font-weight: 300;}
+footer .inner {width: 80%; margin: 0 auto; padding-top: 100px; }
+footer .inner .top {font-size: 64px; margin-bottom: 40px;}
+footer .inner .infoBox {display: flex; justify-content: space-between;}
+footer .inner .infoBox .subTitle {font-size: 16px; font-weight: 500;  color: #ffa903; margin-bottom: 20px;}
+footer .inner .infoBox .subTitle span {display: inline-block; margin: 6px 30px 0; font-size: 20px; font-weight: 500; background: linear-gradient(90deg, rgba(255,169,3,1) 0%, rgba(254,113,4,1) 50%, rgba(255,255,255,1) 90%); background-clip: text; -webkit-background-clip: text; color: transparent; padding-bottom: 8px; transition: all 0.3s; opacity: 0;}
+footer .inner .infoBox .left {width: 50%;}
+footer .inner .infoBox .left .mail {display: inline-block; font-size: 32px; font-weight: 500; background: linear-gradient(90deg, rgba(255,169,3,1) 0%, rgba(254,113,4,1) 50%, rgba(255,255,255,1) 90%); background-clip: text; -webkit-background-clip: text; color: transparent; padding-bottom: 8px; transition: all 0.3s; margin-bottom: 50px;}
+footer .inner .infoBox .right {width: 10%;}
+footer .inner .infoBox .right ul li {font-size: 20px; font-weight: 300; margin-bottom: 40px; position: relative;}
+footer .inner .infoBox .right ul li:nth-child(1):after {content: ''; background: url(../img/main/instarQR.png)no-repeat center/cover; position: absolute; right: -90%; top: -70%; width: 180px; height: 180px; opacity: 0; z-index: 50;}
+footer .inner .infoBox .right ul li:nth-child(2):after {content: ''; background: url(../img/main/kakaoQR.png)no-repeat center/cover; position: absolute; right: -90%; top: -70%; width: 180px;height: 180px; opacity: 0;z-index: 50;}
+
+
+/* hover */
+footer .inner .infoBox .subTitle:nth-child(1):hover span {opacity: 1;}
+footer .inner .infoBox .mail:hover, footer .inner .infoBox .mail:focus {border-bottom: 1px solid #ffa903;}
+footer .inner .infoBox .right ul li:hover a {color: #ffa903; transition: all 0.3s;}
+footer .inner .infoBox .right ul li:nth-child(1):hover:after {opacity: 1; transition: all 0.3s;}
+footer .inner .infoBox .right ul li:nth-child(2):hover:after {opacity: 1; transition: all 0.3s;}
+
+  /* gotop */
+  .topbtn { position: fixed; right: 10%; bottom: 14%; z-index: 6;}
+.goTop {position: fixed; padding: 20px; display: block; text-align: center;}
+.goTop p {margin-top: 4px; opacity: 0; transition: all 0.3s;}
+/* hover */
+.topbtn:hover .goTop p {opacity: 1;}
+
+
+
+
+/* responsive */
+/* 1650px-1301px */
+@media screen and (max-width:1650px) {
+  header .innerHeader {margin-top: 48px;}
+  .visual .objectMe {width: 520px; right: 6%; bottom: 2%;}
+  .visual .objectBright {width: 142px;}
+  .visual .objectBright2 {width: 142px;}
+  .visual .title {font-size: 72px; top: 64.5%;}
+
+  .about .inner .left .mainImg {width: 400px;}
+  .about .inner .right li .img {width: 400px;}
+  .about .inner .left .mainImg .name {font-size: 52px;}
+  .aboutTxt .inner {width: 83%;}
+  .slogun .inner h1 {font-size: 260px;}
+  .skill .inner .textBox {font-size: 80px;}
+  .skill .inner .textBox .pht .b::before {font-size: 80px; right: -60px;}
+  .skill .inner .subTxt li .b::before {font-size: 80px;}
+  .skill .inner .subTxt li:nth-child(1):hover {margin-right:120px;}
+
+  .skill .inner .subTxt:nth-child(2) li:nth-child(1):hover .a:before {content: '02';}
+  .skill .inner .subTxt:nth-child(2) li:nth-child(1):hover .b:before {content: '96%'; right: -55%;}
+  .skill .inner .subTxt:nth-child(2) li:nth-child(2):hover .a:before {content: '03';}
+  .skill .inner .subTxt:nth-child(2) li:nth-child(2):hover .b:before {content: '95%'; right: -66%;}
+  .skill .inner .subTxt:nth-child(3) li:nth-child(1):hover .a:before {content: '04';}
+  .skill .inner .subTxt:nth-child(3) li:nth-child(1):hover .b:before {content: '91%'; right: -70%;}
+  .skill .inner .subTxt:nth-child(3) li:nth-child(2):hover .a:before {content: '05';}
+  .skill .inner .subTxt:nth-child(3) li:nth-child(2):hover .b:before {content: '86%'; right: -100%;}
+  .skill .inner .subTxt:nth-child(4) li:nth-child(1):hover .a:before {content: '06';}
+  .skill .inner .subTxt:nth-child(4) li:nth-child(1):hover .b:before {content: '73%'; right: -70%;}
+  .skill .inner .subTxt:nth-child(4) li:nth-child(2):hover .a:before {content: '07';}
+  .skill .inner .subTxt:nth-child(4) li:nth-child(2):hover .b:before {content: '68%'; right: -45%;}
+
+  .ncs .inner .subTitle {font-size: 152px;}
+  .ncs {background-size: 500px;}
+  footer .inner .top {margin-bottom: 48px;}
+  footer .inner .infoBox .right {width: 16%;}
+  footer .inner .infoBox .right ul li:nth-child(1):after {right: -70%;}
+  footer .inner .infoBox .right ul li:nth-child(2):after {right: -70%;}
+}
+
+/* 1300px-1201px */
+@media screen and (max-width:1300px) {
+  .visual .title {font-size: 5vw; left: 42.7%; top: 63%;}
+  .about .inner .left .mainImg {width: 352px;}
+  .about .inner .right li .img {width: 352px;}
+  .about .inner .right .txtBox .txt {font-size: 22px; }
+  .about .inner .right .txtBox .line {left: -17%;}
+  .work .inner .subTitle .workTitle1 {font-size: 17vw;}
+  .work .inner .subTitle .workTitle2 {font-size: 17vw;}
+  .about .inner .left .mainImg .name {top: 16%;}
+  .about .inner .left .mainImg .point {top: 15%;}
+  .skill .inner .subTxt li:nth-child(1):hover {margin-right:100px ;}
+  .skill .inner .textBox .pht .b::before {font-size: 80px; right: -90px;}
+  .ncs .inner ul li {width: 56%;}
+  .mockUp .upBox {width: 200%;}
+
+}
+
+/* 1200px-1025px */
+@media screen and (max-width:1200px) {
+  header {padding: 0 20px;}
+  header .innerHeader {width: 90%;}
+  .visual .objectMe {width: 450px;}
+  .about .inner { flex-wrap: wrap;}
+  .about .inner .left {width: 100%; margin-bottom: 60px;}
+  .about .inner .left .mainImg {width: 60vw;}
+  .about .inner .right {width: 100%; justify-content: center;}
+  .about .inner .right li {margin-left: 30%;}
+  .about .inner .right li .img {width: 60vw;}
+  .about .inner .right .txtBox .line {left: 8%;}
+  .aboutTxt .inner {width: 90%;}
+  .skill .inner .textBox {font-size: 62px;}
+  .skill .inner .textBox .pht .a::before {display: none;}
+  .skill .inner .textBox .pht .b::before {top: -74%; right: -60%;}
+  .skill .inner .subTxt li .a::before {display: none;}
+  .skill .inner .line {left: 55%; top: 10%;}
+  .skill .inner .line .lineImg {width: 30px;}
+  .work .inner {width: 82%;}
+  .work .workList li a .txtBox h3 {font-size: 20px;}
+  .work .workList li a .txtBox p {font-size: 14px;}  
+  .ncs {background-size: 40vw;}
+  .ncs .inner .subTitle {font-size: 14vw;}
+  .ncs .btnMore {bottom: 15%;}
+  .mockUp .upBox {width: 260%;}
+  .topbtn {right: 15%;}
+  footer .inner .infoBox .right ul li:nth-child(1):after {width: 140px; height: 140px;}
+  footer .inner .infoBox .right ul li:nth-child(2):after {width: 140px; height: 140px;}
+}
+
+/* 1024px-871px */
+@media screen and (max-width:1024px) {
+  .title {font-size: 26px;}
+  .titleBox .titleArrow {width: 30px;}
+  .titleBox .titleArrow img {width: 100%;}
+  .slogun .inner.motion {animation: slide 10s infinite ease-out;}
+  .slogun .inner h1 {font-size: 14vw;}
+  @keyframes slide {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-200%);}
+  }
+  .work .workList {margin: 15vh auto 0;}
+  .work .inner .subTitle {display: none;}
+  .ncs {height: 100%;}
+  .ncs .inner ul {flex-wrap: wrap;}
+  .ncs .inner ul li {width: 48%; margin:0;}
+  .ncs .inner ul li:nth-child(2n) {margin-top: 10%;}
+  .ncs .inner ul li a img {border-radius: 10px;}
+  .ncs .btnMore {bottom: 0;}
+  .mockUp {display: none;}
+  footer .inner .infoBox .subTitle span {margin: 6px 10px;}
+}
+
+/* 870px-651px */
+@media screen and (max-width:870px) {
+  header .innerHeader {margin-top: 32px;}
+  header .innerHeader nav .gnb li:nth-child(2) a {opacity: 0;}
+  header .innerHeader nav .gnb li:nth-child(3) a {opacity: 0;}
+  header .innerHeader nav .gnb li:nth-child(4) a {opacity: 0;}
+  header .innerHeader nav .gnb li:nth-child(5) a {opacity: 0;}
+  /* hover */
+  header .innerHeader nav .gnb:hover li a {opacity: 1; transition: all 0.8s;}
+  .visual .title {left: 37%; top: 64%; }
+  .visual .objectBright {width: 130px;}
+  .visual .objectBright2 {width: 130px;}
+  .aboutTxt .inner .subtitle {font-size: 26px;}
+  .slogun .inner h1 {font-size: 180px;}
+  .skill .inner .textBox {font-size: 7vw;}
+  .skill .inner .textBox .pht .b::before {right: -80%; font-size: 8vw;}
+  .skill .inner .subTxt li .b::before {font-size: 8vw;}
+  .work .workList li {width: 80%; margin: 10% auto 0;}
+  .ncs .inner ul li {width: 80%; margin: 20px auto;}
+  .ncs .inner ul li:nth-child(2n) {margin-top: 20px;}
+  footer .inner .top {font-size: 40px;}
+  footer .inner .infoBox .left {width: 75%;}
+  footer .inner .infoBox .left .mail {font-size: 24px;}
+  footer .inner .infoBox .subTitle span {margin:  10px;}
+  footer .inner .infoBox .right ul li {font-size: 16px;}
+  .topbtn {right: 16%;}
+}
+/* 650px-501 */
+@media screen and (max-width:650px) {
+  header .innerHeader .logo {font-size: 3.5vw; margin-top: 4px;}
+  .visual .title {left: 32%; top: 65%;}
+  .visual .title {font-size: 6vw;}
+  .visual .objectBright {width: 24vw;}
+  .visual .objectBright2 {width: 24vw;}
+  .visual .objectMe {width: 70vw; bottom: 8%;}
+  .visual .scrolldown {display: none;}
+  .aboutTxt .inner .subtitle {font-size: 1.1rem;}
+  .aboutTxt .inner .txt {font-size: 15px;}
+  .slogun .inner h1 {font-size: 127px;}
+  .skill {margin: 100px auto 0;}
+  .skill .inner .subTxt li {margin-right: 21px;}
+  .skill .inner .subTxt li:nth-child(1):hover {margin-right: 70px;}
+  .skill .inner .textBox .pht .b::before {top: -65%;}
+  .work .workList {margin: 3vh auto 0;}
+  .work .inner .top .subTxt {display: none;}
+  .ncs .inner .subTitle {margin-bottom: -7%;}
+  .ncs .inner ul li {width: 100%;}
+  footer .inner .top {margin-bottom: 71px;}
+  footer .inner .infoBox .left {width: 78%;}
+  footer .inner .infoBox .right {width: 22%;}
+  footer .inner .infoBox .right ul li:nth-child(1):after {right: -30%;}
+  footer .inner .infoBox .right ul li:nth-child(2):after {right: -30%;}
+  .topbtn {right: 20%; bottom: 10%;}
+
+}
+
+/* 500px-401px */
+@media screen and (max-width:500px) {
+  header .innerHeader .logo {font-size: 1.1rem;}
+  header .innerHeader nav {font-size: 1rem;}
+  .visual .objectMe {width: 80vw;}
+  .visual .objectBright2 {width: 27vw;}
+  .visual .objectBright {width: 27vw;}
+  .about .inner .left .mainImg .point {width: 19px;}
+  .about .inner .left .mainImg .btnAbout {width: 18vw;}
+  .about .inner .right .txtBox .txt {font-size: 18px; margin-bottom: 40px;}
+  .slogun .inner li {padding: 10%;}
+  .slogun .inner h1 {font-size: 20vw;}
+  .skill {margin: 0; height: 70vh;}
+  .skill .inner .line {top: 19%;}
+  .skill .inner .line h3 {font-size: 16px;}
+  .skill .inner .line .lineImg {width: 22px; margin-right: 16px;}
+  .work .workList li {width: 100%;}
+  .ncs .inner ul li {width: 90%;}
+  footer .inner .top {font-size: 10vw;}
+  footer .inner .infoBox {display: block;}
+  footer .inner .infoBox .left {margin-bottom: 4px;}
+  footer .inner .infoBox .right ul li {margin-bottom: 24px;}
+  .topbtn {right: 22%;}
+}
+
+/* 400px-320px */
+@media screen and (max-width:400px) {
+  .about .inner .left .mainImg .name {font-size: 31px;}
+  .aboutTxt .inner .subtitle span {display: inline-block;}
+  .skill .inner .subTxt li {margin-right: 8px;}
+  .skill .inner .subTxt li:nth-child(1):hover {margin-right: 30px;}
+  .skill .inner .line {top: 24%;}
+  .skill .inner .line h3 {font-size: 13px;}
+  .skill .inner .line .lineImg {width: 24px;}
+  .work .workList li a .txtBox .subTxt {font-size: 16px;}
+  .work .workList li a .txtBox h3 {font-size: 20px;}
+  .work .workList a .imgBox::before {background: #fff url(../img/main/workArrow.png) no-repeat center/10px; width: 100px; height: 100px;}
+  .ncs .inner ul li {width: 100%;}
+  .ncs .inner ul li a img {border-radius: 10px;}
+  footer .inner {padding-top: 55px;}
+  footer .inner .infoBox .subTitle {margin-bottom: 26px;}
+  footer .inner .infoBox .right {width: 100%;}
+  footer .inner .infoBox .left .mail {font-size: 20px;}
+  footer .inner .infoBox .right ul li {font-size: 16px;}
+  footer .inner .infoBox .right ul li:nth-child(1):after {right: 0;}
+  footer .inner .infoBox .right ul li:nth-child(2):after {right: 0;}
+  .topbtn {right: 34%;}
+}
